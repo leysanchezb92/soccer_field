@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    background-color: #5b9452;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #5b9452;
+    border: 2px solid white;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    max-width: 1240px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.player {
+    background-color: blue;
+    grid-column: 2/3;
+    grid-row: 6/6;
+    animation-name: player;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+.ball {
+    background-color: white;
+    grid-column: 2/3;
+    grid-row: 5/6;
+    animation-name: ball;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+.goal {
+    background-color: red;
+    grid-column: 3/5;
+    grid-row: 1/2;
+}
+
+@keyframes player {
+    0% {
+        grid-row: 6/6;
+        grid-column: 2/3;
+    }
+    25% {
+        grid-row: 5/5;
+        grid-column: 3/4;
+    }
+    50% {
+        grid-row: 4/4;
+        grid-column: 4/4;
+    }
+    75% {
+        grid-row: 3/3;
+        grid-column: 3/4;
+    }
+    100% {
+        grid-row: 2/2;
+        grid-column: 2/3;
+    }
+}
+
+@keyframes ball {
+    0% {
+        grid-row: 5/6;
+        grid-column: 2/3;
+    }
+    25% {
+        grid-row: 4/5;
+        grid-column: 3/4;
+    }
+    50% {
+        grid-row: 3/4;
+        grid-column: 4/4;
+    }
+    75% {
+        grid-row: 2/3;
+        grid-column: 3/4;
+    }
+    100% {
+        grid-row: 1/2;
+        grid-column: 3/4;
+        z-index: 1;
+        position: relative;
+    }
+
+}
+
